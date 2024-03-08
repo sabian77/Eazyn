@@ -78,7 +78,7 @@
               <li class="sidebar-item">
                 <a
                   class="sidebar-link"
-                  href="./riwayat.html"
+                  href="riwayat.php"
                   aria-expanded="false"
                 >
                   <span>
