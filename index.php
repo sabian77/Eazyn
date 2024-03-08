@@ -1,6 +1,6 @@
 <?php require_once("config/connect.php");
 $query = "select izin.*, guru.nama as nama_guru, bk.nama as nama_bk from izin inner join guru on guru.id =
- izin.guru_id inner join bk on bk.id = izin.bk_id where siswa_id = 2;";
+ izin.guru_id inner join bk on bk.id = izin.bk_id where siswa_id = 3;";
 $run_sql = mysqli_query($is_connect, $query);
 //var_dump($sql); //buat check isi variable
 ?>
@@ -248,6 +248,19 @@ $run_sql = mysqli_query($is_connect, $query);
                   <div class="card-body p-4">
                     <h5 class="card-title mb-9 fw-semibold">izin tersedia</h5>                    
                     <div class="row align-items-center">
+                    <div class="col-8">
+                      <?php
+                      // First query to retrieve a value from the 'setting' table
+                      $query = "select value from setting where nama_setting = 'pembatasan'";
+                      $sql = mysqli_query($is_connect, $query);
+                      $fetch_data1 = mysqli_fetch_all($sql, MYSQLI_ASSOC);
+                      // Second query to count records in the 'izin' table based on certain conditions
+                      $query1 = "select count(id) as jumlah_izin from izin where siswa_id = 3 and is_approve = 2";
+                      $sql1 = mysqli_query($is_connect, $query1);
+                      $fetch_data2 = mysqli_fetch_all($sql1, MYSQLI_ASSOC);
+                      ?>
+                      <h4 class="fw-semibold mb-3"><?php echo $fetch_data1[0]['value']-$fetch_data2[0]['jumlah_izin'] ?> Kali</h4>
+                    </div>
                       <div class="col-4">
                         <h1 class="fw-semibold mb-3">12</h1>
                       </div>
