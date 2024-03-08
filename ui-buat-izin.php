@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Eazyn</title>
+    <title>Izin mudah bersama Eazyn</title>
     <link
       rel="shortcut icon"
       type="image/png"
@@ -236,7 +236,7 @@
                       <p class="mb-0 fs-3">My Task</p>
                     </a> -->
                       <a
-                        href="./authentication-login.html"
+                        href="login.php"
                         class="btn btn-outline-primary mx-3 mt-2 d-block"
                         >Logout</a
                       >
