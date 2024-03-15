@@ -3,7 +3,15 @@ $query = "select izin.*, guru.nama as nama_guru, bk.nama as nama_bk from izin in
  izin.guru_id inner join bk on bk.id = izin.bk_id where siswa_id = 3;";
 $run_sql = mysqli_query($is_connect, $query);
 //var_dump($sql); //buat check isi variable
+
 ?>
+<?php 
+session_start();
+if(!isset($_SESSION['login'])){
+    header('location: login.php');
+    exit;
+}
+?> 
 
 <!doctype html>
 <html lang="en">
@@ -107,7 +115,7 @@ $run_sql = mysqli_query($is_connect, $query);
                       <p class="mb-0 fs-3">My Account</p>
                     </a>
                     
-                    <a href="login.php" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                    <a href="logout.php" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                   </div>
                 </div>
               </li>

@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if(!isset($_SESSION['login'])){
+    header('location: login.php');
+    exit;
+}
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -236,7 +244,7 @@
                       <p class="mb-0 fs-3">My Task</p>
                     </a> -->
                       <a
-                        href="login.php"
+                        href="logout.php"
                         class="btn btn-outline-primary mx-3 mt-2 d-block"
                         >Logout</a
                       >

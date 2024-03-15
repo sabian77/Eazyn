@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if(!isset($_SESSION['login'])){
+    header('location: index.php');
+    exit;
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -33,6 +41,7 @@
                     <label for="exampleInputPassword1" class="form-label">password</label>
                     <input type="password" name="password" placeholder="password" class="form-control" id="exampleInputPassword1">
                   </div>
+                  <!-- <a href="register.php">Belum punya akun</a> -->
                   <div class="d-flex align-items-center justify-content-between mb-4">
                     <!-- <div class="form-check">
                       <input class="form-check-input primary" type="checkbox" value="" id="flexCheckChecked" checked>
