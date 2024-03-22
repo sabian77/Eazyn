@@ -9,7 +9,7 @@ $password = $_POST['password'];
 $query = "SELECT * FROM siswa WHERE username='$username' AND password='$password'";
 $result = mysqli_query($is_connect, $query);
 
-if(mysqli_num_rows($result) > 0){
+if(null !=$data['id']){
     $_SESSION['id'] = $data['id'];
     $_SESSION['username'] = $username;
     header('Location: index.php');
