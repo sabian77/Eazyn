@@ -1,5 +1,4 @@
 <?php 
-<<<<<<< HEAD
 session_start();
 
 if(!isset($_SESSION['id'])){
@@ -10,20 +9,19 @@ session_start();
 if(!isset($_SESSION['login'])){
     header('location: login.php');
     exit;
->>>>>>> d77ce7b09f4faeb6985936aeacd86c3f59625aad
 }
 
-require_once("config/connect.php");
+require_once 'config/connect.php';
 $query = "select izin.*, guru.nama as nama_guru, bk.nama as nama_bk from izin inner join guru on guru.id =
-<<<<<<< HEAD
  izin.guru_id inner join bk on bk.id = izin.bk_id where siswa_id = 3;";
-=======
  izin.guru_id inner join bk on bk.id = izin.bk_id where siswa_id = ".$_SESSION['id'];
->>>>>>> d77ce7b09f4faeb6985936aeacd86c3f59625aad
+
 $run_sql = mysqli_query($is_connect, $query);
+?>
+
 //var_dump($sql); //buat check isi variable
 
-?>
+
 
 <!doctype html>
 <html lang="en">
