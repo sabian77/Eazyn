@@ -1,17 +1,17 @@
-<?php require_once("config/connect.php");
+<?php 
+session_start();
+
+if(!isset($_SESSION['id'])){
+  header('Location:login.php');
+}
+
+require_once("config/connect.php");
 $query = "select izin.*, guru.nama as nama_guru, bk.nama as nama_bk from izin inner join guru on guru.id =
  izin.guru_id inner join bk on bk.id = izin.bk_id where siswa_id = 3;";
 $run_sql = mysqli_query($is_connect, $query);
 //var_dump($sql); //buat check isi variable
 
 ?>
-<?php 
-session_start();
-if(!isset($_SESSION['login'])){
-    header('location: login.php');
-    exit;
-}
-?> 
 
 <!doctype html>
 <html lang="en">
