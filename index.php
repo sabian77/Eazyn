@@ -1,9 +1,8 @@
 <?php 
 
 session_start();
-if(!isset($_SESSION['login'])){
-    header('location: login.php');
-    exit;
+if(!isset($_SESSION['id'])){
+    header('Location: login.php');
 }
 
 require_once("config/connect.php");
